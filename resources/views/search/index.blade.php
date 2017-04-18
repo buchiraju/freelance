@@ -50,10 +50,30 @@
                             </form>
                         
             <?php if(isset($searchResults)){ ?>
-                <div class="row">
-                <?php print_r($searchResults);?>
-                </div>  
-            <?php } ?>                        
+				<div class="row">
+				<table class"table table-hover" border="1" cellspacing="" cellpadding="">
+					<thead>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Text</th>
+						<th>Created Date</th>
+					</thead>
+					<tbody>
+					<?php 
+					foreach($searchResults as $key => $value){ ?>
+						<tr>
+							<td><?php echo $value->name; ?></td>
+							<td><?php echo $value->email; ?></td>
+							<td><?php echo $value->text; ?></td>
+							<td><?php echo $value->created_at; ?></td>
+						</tr>
+				<?php	}
+				?>
+					</tbody>
+				</table>
+				
+				</div>	
+			<?php } ?>                       
                     </div>
                 </div>
                 </div>
@@ -70,3 +90,4 @@
   </div>
 </div>
 @endsection
+

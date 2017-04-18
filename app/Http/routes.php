@@ -15,9 +15,10 @@ Route::get('/', function () {
     return view('auth.userLogin');
 });
 
-/*Route::get('/about', function () {
-    return view('auth.aboutus');
-});*/
+Route::post('/search/getresults', [
+    'uses' => 'SearchController@getresults'
+]);
+
 
 Route::get('/about', [
     'uses' => 'AdminController@aboutus'
@@ -27,6 +28,11 @@ Route::get('/about', [
 Route::get('/contact', function () {
     return view('auth.contactus');
 });
+
+Route::post('/contact', function () {
+    return view('auth.contactus');
+});
+
 
 Route::post('/users/doLogin', [
     'uses' => 'UsersController@doLogin'

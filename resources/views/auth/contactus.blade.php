@@ -8,7 +8,8 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="well well-sm">
-          <form class="form-horizontal" action="" method="post">
+          <form class="form-horizontal" action="{{URL::to('/')}}/contact" method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <fieldset>
             <legend class="text-center">Contact us</legend>
     
