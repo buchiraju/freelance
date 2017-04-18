@@ -25,7 +25,7 @@ class SearchController extends Controller
      */
     public function getresults()
     {      
-		print_r(Input::all());
+		
 		$searchTxt = Input::get('searchTxt');
 		$tickets = Input::get('tickets');
 		$brands = Input::get('brands');
