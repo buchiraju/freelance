@@ -12,8 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('auth.userLogin');
+    //return view('auth.userLogin');
+    return view('auth.login');
 });
+
+Route::post('/users/doLogin', [
+    'uses' => 'UsersController@doLogin'
+]);
 
 Route::post('/search/getresults', [
     'uses' => 'SearchController@getresults'

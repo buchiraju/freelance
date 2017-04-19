@@ -53,8 +53,7 @@ class AdminController extends Controller
     public function aboutus()
     {   
         
-        $data = DB::select( DB::raw("SELECT content FROM aboutus ORDER BY content DESC LIMIT 1") );
-                
+        $data = DB::select( DB::raw("SELECT content FROM aboutus ORDER BY created_date DESC LIMIT 1") );                
         return view('auth.aboutus')->with('content', $data);     
     }
 
