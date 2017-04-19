@@ -17,7 +17,7 @@
           </ul>
 		  @if(Session::has('admin_user')))
 		  <ul class="nav navbar-nav pull-right">
-            <li><a href="/ticket/soslogin?username={{ Session::get('admin_user')}}&appkey=1login">Ticketing <span class="glyphicon glyphicon-new-window"></span></a></li>
+            <li><a href="{{ env('TICKETING_URL') }}/ticket/soslogin?username={{ Session::get('admin_user')}}&appkey=1login">Ticketing <span class="glyphicon glyphicon-new-window"></span></a></li>
             <li><a href="{{ env('BRAND_URL') }}/brand/soslogin?username={{ Session::get('admin_user')}}&appkey=1login" target="_blank">Branding <span class="glyphicon glyphicon-new-window"></span></a></li>
 			<li><a href="{{ URL::to('/') }}/logout">Logout</a></li>
           </ul>
