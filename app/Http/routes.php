@@ -12,13 +12,20 @@
 */
 
 Route::get('/', function () {
-    //return view('auth.userLogin');
-    return view('auth.login');
+    return view('auth.userLogin');
+    //return view('auth.login');
 });
 
 Route::post('/users/doLogin', [
     'uses' => 'UsersController@doLogin'
 ]);
+ Route::get('/logout', function() {
+ Session::flush();
+  if(!Session::has('username'))
+   {
+      return "signout";
+   }
+ });
 
 Route::post('/search/getresults', [
     'uses' => 'SearchController@getresults'
