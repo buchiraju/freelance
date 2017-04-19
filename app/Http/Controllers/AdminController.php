@@ -34,11 +34,21 @@ class AdminController extends Controller
             $input = input::all();
 
         } else {
-            Session::put('admin_user', Input::get('username'));  
-            Session::put('admin_pwd', Input::get('password'));          
-            
-            // load dashboard page
-            return view('admin.dashboard');
+
+
+            // create our user data for the authentication
+            $users = DB::table('users')
+                        ->where('email', '=', Input::get('username'))
+                        ->where('password', '=', Input::get('password'))
+                        ->get();
+            if($users){
+                Session::put('admin_user', Input::get('username'));  
+                Session::put('admin_pwd', Input::get('password')); 
+                // load dashboard page
+                return view('admin.dashboard');
+            }else{
+                return view('admin.login')->withErrors('Please enter valid inputs');
+            } 
         }
         		
     }
