@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use DB;
+use Session;
 
 class AdminController extends Controller
 {
@@ -33,8 +34,9 @@ class AdminController extends Controller
             $input = input::all();
 
         } else {
-            session(['admin_user' => Input::get('username')]);
-            session(['admin_pwd' => Input::get('password')]);
+            Session::put('admin_user', Input::get('username'));  
+            Session::put('admin_pwd', Input::get('password'));          
+            
             // load dashboard page
             return view('admin.dashboard');
         }

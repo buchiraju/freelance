@@ -10,7 +10,7 @@
           <a class="navbar-brand" href="{{ URL::to('/') }}/">Project name</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav">{{Session::get('admin_user')}}
             <li class="active"><a href="{{ URL::to('/') }}/">Home</a></li>
             <li><a href="{{ URL::to('/') }}/about">About</a></li>
             <li><a href="{{ URL::to('/') }}/contact">Contact</a></li>
