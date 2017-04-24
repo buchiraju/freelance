@@ -48,24 +48,29 @@
                                     </div>
                                 </div>
                             </form>
-                        
-            <?php if(isset($searchResults)){ ?>
+                    </div>
+                </div>
+                </div>
+            </div>
+		</div>
+		<div class="row">
+		<?php if(isset($searchResults)){ ?>
 				<div class="row">
-				<table class"table table-hover" border="1" cellspacing="" cellpadding="">
+				<table class="table table-hover" border="1" cellspacing="" cellpadding="">
 					<thead>
-						<th>Name</th>
-						<th>Email</th>
-						<th>Text</th>
-						<th>Created Date</th>
+						<th class="col-md-3">Name</th>
+						<th class="col-md-3">Email</th>
+						<th class="col-md-3">Text</th>
+						<th class="col-md-3">Created Date</th>
 					</thead>
 					<tbody>
 					<?php 
 					foreach($searchResults as $key => $value){ ?>
 						<tr>
-							<td><?php echo $value->name; ?></td>
-							<td><?php echo $value->email; ?></td>
-							<td><?php echo $value->text; ?></td>
-							<td><?php echo $value->created_at; ?></td>
+							<td class="col-md-3"><?php echo $value->name; ?></td>
+							<td class="col-md-3"><?php echo $value->email; ?></td>
+							<td class="col-md-3"><?php echo $value->text; ?></td>
+							<td class="col-md-3"><?php echo $value->created_at; ?></td>
 						</tr>
 				<?php	}
 				?>
@@ -73,13 +78,9 @@
 				</table>
 				
 				</div>	
-			<?php } ?>                       
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>
+			<?php } ?>
+		</div>
+	</div>
         </div>
       </div>
 

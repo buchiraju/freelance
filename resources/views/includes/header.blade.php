@@ -21,6 +21,10 @@
             <li><a href="{{ env('BRAND_URL') }}/brand/soslogin?username={{ Session::get('admin_user')}}&appkey=1login" target="_blank">Branding <span class="glyphicon glyphicon-new-window"></span></a></li>
 			<li><a href="{{ URL::to('/') }}/logout">Logout</a></li>
           </ul>
+		  @else
+		  <ul class="nav navbar-nav pull-right">
+			<li><a href="{{ URL::to('/') }}/admin">admin</a></li>
+          </ul> 	  
 		  @endif
         </div><!--/.nav-collapse -->
       </div>
